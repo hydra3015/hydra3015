@@ -3,8 +3,8 @@ package com.lishan.finance.controller;
 
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,14 +16,16 @@ import com.lishan.finance.pojo.LoanDetail;
 import com.lishan.finance.pojo.User;
 import com.lishan.finance.service.LoanService;
 
+
 @Controller
 @RequestMapping("frontstage")
 public class LoanController {
 
-	@Autowired
-	@Qualifier("lService")
-	private LoanService loanService;
+
 	
+	@Qualifier("lService")
+	@Autowired
+	private LoanService loanService;	
 	@RequestMapping("/commitLoan")
 	@ResponseBody
 	public String commitLoan(LoanDetail loanDetail,HttpSession session)throws Exception{
@@ -42,8 +44,10 @@ public class LoanController {
 				jsonObject.put("success", true);
 			}
 		}else {
-			jsonObject.put("success", false);
+
 			jsonObject.put("msg", "您还未登录,请先登录!");
+			jsonObject.put("success", false);
+
 		}
 		return jsonObject.toJSONString();
 	}
@@ -52,6 +56,7 @@ public class LoanController {
 	public String createInvestItem(HttpSession session,InvestItem investItem,Integer loan_id)throws Exception{
 		session.removeAttribute("loanDetail");
 		loanService.createInvestItem(investItem,loan_id);
+
 		return "forward:/frontstage/getAsset-Statistics";
 	}
 }
