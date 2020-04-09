@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<frame x="auto" y="auto" width = "1280" height = "720">
+		<layerDefault 
+			title_x = "16" 
+			title_y = "16" 
+			padding = "16" 
+			stringSize = "30" 
+			numberSize = "35" 
+			bold = "10" 
+			imagebold = "10"
+			imgPath = "window/pannel-80.png"
+		/>
+		<layer className="com.zjw.tetris.ui.lay.BGLayer"		x="0"		y="0"	width="0"	height = "0"  />
+		<layer className="com.zjw.tetris.ui.lay.DBLayer"		x="80"		y="75"	width="334"	height = "280"/>
+		<layer className="com.zjw.tetris.ui.lay.LocalLayer" 	x="80"		y="385"	width="334"	height = "285"/>
+		<layer className="com.zjw.tetris.ui.lay.GameLayer"		x="471"		y="75"	width="339"	height = "595"/>
+		<layer className="com.zjw.tetris.ui.lay.ButtonLayer"	x="866"		y="75"	width="334"	height = "130"/>
+		<layer className="com.zjw.tetris.ui.lay.NextLayer"		x="866"		y="228"	width="165"	height = "130"/>
+		<layer className="com.zjw.tetris.ui.lay.GreadLayer"		x="1035"	y="228"	width="165"	height = "130"/>
+		<layer className="com.zjw.tetris.ui.lay.PointLayer"		x="866"		y="382"	width="334"	height = "180"/>
+		<layer className="com.zjw.tetris.ui.lay.AboutLayer"		x="866"		y="585"	width="334"	height = "85"/> 
+		<layer className="com.zjw.tetris.ui.lay.SuspendLayer"	x="0"		y="0"	width="0"	height = "0"/> 
+
+	</frame>
+	<system>
+	
+	</system>
+
+	<data>
+		<className>com.mysql.jdbc.Driver</className>
+		<url>jdbc:mysql://localhost:3306/tetris</url>
+		<username>root</username>
+		<password>root</password>
+	</data>
+	
+</game>
+
+
